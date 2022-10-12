@@ -70,6 +70,16 @@ pipeline{
         stage("Deploy"){
             steps{
                 echo ".............Deploy.....nm nbm......"
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'Ansible_Controller', 
+                transfers: [
+                    sshTransfer(
+                        cleanRemote : false.
+                        execCommand :'ansible-playbook /opt/playbooks/helloworld/deploySpring.yaml -i /opt/playbooks/helloworld/hosts',
+                        execTimeout :120000
+
+                    )
+                ], 
+                usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
 
