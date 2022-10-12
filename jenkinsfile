@@ -73,7 +73,7 @@ pipeline{
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'Ansible_Controller', 
                 transfers: [
                     sshTransfer(
-                        cleanRemote: false.
+                        cleanRemote: false,
                         execCommand: 'ansible-playbook /opt/playbooks/helloworld/deploySpring.yaml -i /opt/playbooks/helloworld/hosts',
                         execTimeout:120000
 
