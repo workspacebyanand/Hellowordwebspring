@@ -74,7 +74,7 @@ pipeline{
                 transfers: [
                     sshTransfer(
                         cleanRemote : false.
-                        execCommand :'ansible-playbook /opt/playbooks/helloworld/deploySpring.yaml -i /opt/playbooks/helloworld/hosts',
+                        execCommand : 'ansible-playbook /opt/playbooks/helloworld/deploySpring.yaml -i /opt/playbooks/helloworld/hosts',
                         execTimeout :120000
 
                     )
